@@ -1,0 +1,58 @@
+-------------------- QUESTAO 1 -----------------------------------------------
+icodigo_produto = input(&#39;Escreva o código do produto:&#39;)
+nome_produto = input(&#39;Escreva o nome do produto:&#39;)
+preco_compra = float(input(&#39;Escreva o preço de compra:&#39;))
+percentual_lucro = float(input(&#39;Escreva o percentual do lucro:&#39;))
+
+preco_venda == preco_compra * (1 + percentual_lucro / 100)
+print(f&#39;Este produto {nome_produto} possui o preço de compra {preco_compra}, com o lucro {percentual_lucro} e o preç
+o de venda {preco_venda}.&#39;)
+
+------------------ QUESTAO 2 -------------------------------------------------------
+while True:
+  codigo_produto = int(input(&#39;Escreva o código do produto (0 para sair):&#39;))
+  if codigo_produto == 0:
+    break
+  nome = input(&#39;Escreva o nome do produto:&#39;)
+  preco_compra = float(input(&#39;Escreva o preço de compra do produto:&#39;))
+  percentual_lucro = float(input(&#39;Escreva o percentual do lucro:&#39;))
+  preco_venda = (preco_compra * (1 + percentual_lucro / 100)) + preco_compra
+  preco_lucro = preco_compra * (1 + percentual_lucro / 100)
+  print(&#39;O produto: {}&#39;.format(nome))
+  print(&#39;Tem seu preço de compra: R${}&#39;.format(preco_compra))
+  print(&#39;O percentual de lucro: {}%&#39;.format(percentual_lucro))
+  print(&#39;O valor do lucro: R${}&#39;.format(preco_lucro))
+  print(&#39;Com o seu preço de venda: R${}&#39;.format(preco_venda))
+  if preco_lucro &gt; preco_compra:
+    print(&#39;Lucro abusivo&#39;)
+  elif preco_lucro == preco_compra:
+    print(&#39;Lucro máximo praticado&#39;)
+  else:
+    print(&#39;Lucro aceitável&#39;)
+
+-------------------------------- QUESTAO 3 --------------------------------------
+estoque = 3
+soma_precos_venda = 0
+for i in range(estoque):  
+  codigo_produto = input(&quot;Digite o código do produto {}: &quot;.format(i+1))
+  nome_produto = input(&quot;Digite o nome do produto {}: &quot;.format(i+1))
+  preco_compra = float(input(&quot;Digite o preço de compra do produto {}: &quot;.format(i+1)))
+  percentual_lucro = float(input(&quot;Digite o percentual de lucro do produto {}: &quot;.format(i+1)))
+  preco_venda = preco_compra * (1 + percentual_lucro / 100)
+  valor_lucro = preco_venda - preco_compra
+  print(&quot;Nome do produto:&quot;, nome_produto)
+  print(&quot;Preço de compra:&quot;, preco_compra)
+  print(&quot;Percentual de lucro:&quot;, percentual_lucro)
+  print(&quot;Valor do lucro:&quot;, valor_lucro)
+  if valor_lucro &gt; preco_compra:
+      print(&quot;Lucro abusivo&quot;)
+  elif valor_lucro == preco_compra:
+      print(&quot;Lucro máximo praticado&quot;)
+  else:
+      print(&quot;Lucro aceitável&quot;)
+  print(&quot;Preço de venda:&quot;, preco_venda)
+  print()
+  soma_precos_venda += preco_venda
+
+media_precos_venda = soma_precos_venda / estoque
+print(&quot;Média dos preços de venda: {}&quot;.format(media_precos_venda))
